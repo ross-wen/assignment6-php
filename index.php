@@ -36,13 +36,12 @@
         echo $Error;  
     } else {  
         if ($iteration <= 0) {
-            echo "Only positives are allowed."
+            echo "Only positives are allowed.";
         }
         if (is_int($iteration) == False) {
-            echo "Only whole numbers are allowed."
+            echo "Only whole numbers are allowed.";
         }
     }  
-
   ?>
     </div>
   <body>
