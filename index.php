@@ -29,7 +29,13 @@
             <input type="text" id="iterations" name="iterations"><br>
             <input type="submit" value="Submit">
         </form>
-  <?php
+
+  
+    </div>
+  <body>
+</html>
+
+<!--   <?php
     $iteration = $_POST["iterations"];
     if (!preg_match ("/^[0-9]*$/", $iteration) ){  
         $Error = "Only numeric value is allowed.";  
@@ -42,7 +48,4 @@
             echo "Only whole numbers are allowed.";
         }
     }  
-  ?>
-    </div>
-  <body>
-</html>
+  ?> -->
