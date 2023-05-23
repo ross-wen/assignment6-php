@@ -21,29 +21,24 @@
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">Gregory-Leibniz Series</span>
         </div>
-        </header>
-        
+    </header>
         <main class="mdl-layout__content" style="margin-left:75px;">
-        <form  action="handler.php" method=post>
-            <label for="iterations">Number of Iterations</label><br>
-            <input type="text" id="iterations" name="iterations"><br>
-            <input type="submit" value="Submit">
-        </form>
-  <?php
-    $iteration = $_POST["iterations"];
-    if (!preg_match ("/^[0-9]*$/", $iteration) ){  
-        $Error = "Only numeric value is allowed.";  
-        echo $Error;  
-    } else {  
-        if ($iteration <= 0) {
-            echo "Only positives are allowed."
-        }
-        if (is_int($iteration) == False) {
-            echo "Only whole numbers are allowed."
-        }
-    }  
-
-  ?>
     </div>
   <body>
-</html>
+
+  <?php
+    $num = (int)$_POST["iterations"];
+    $deno = 1;
+    $pi = 0;
+    for ($i = 0; $i <= $num; $i++) {
+        $deno = $deno + 2;
+        if ($i % 2 == 0) {
+            $pi = $pi + 4/$deno;
+        } else {
+            $pi = $pi - 4/$deno;
+        }
+    }
+    echo "$num iterations of the Gregory-Leibniz Series is:";
+    echo $pi;
+
+  ?>
