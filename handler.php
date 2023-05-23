@@ -17,16 +17,14 @@
 
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Gregory-Leibniz Series</span>
-        </div>
-    </header>
-        <main class="mdl-layout__content" style="margin-left:75px;">
-    </div>
-  
-
-    <?php
+      <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title">Gregory-Leibniz Series</span>
+          </div>
+      </header>
+      <main class="mdl-layout__content" style="margin-left:75px;">
+      
+      <?php
       $num = (int)$_POST["iterations"];
       $deno = -1;
       $pi = 0;
@@ -41,7 +39,9 @@
       echo "$num iterations of the Gregory-Leibniz Series is:";
       echo $pi;
 
-    ?>
-    <a href="index.php">Main Page</a>
+      ?>
+        <a href="index.php">Main Page</a>
+      </main>
+    </div>
   </body>
 </html>

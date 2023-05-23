@@ -29,7 +29,7 @@
             <input type="text" id="iterations" name="iterations"><br>
             <input type="submit" value="Submit">
         </form>
-
+        </main>
   
     </div>
   <body>
