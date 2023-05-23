@@ -24,23 +24,24 @@
     </header>
         <main class="mdl-layout__content" style="margin-left:75px;">
     </div>
-  <body>
+  
 
-  <?php
-    $num = (int)$_POST["iterations"];
-    $deno = -1;
-    $pi = 0;
-    for ($i = 0; $i <= $num; $i++) {
-        $deno = $deno + 2;
-        if ($i % 2 == 0) {
-            $pi = $pi + 4/$deno;
-        } else {
-            $pi = $pi - 4/$deno;
-        }
-    }
-    echo "$num iterations of the Gregory-Leibniz Series is:";
-    echo $pi;
+    <?php
+      $num = (int)$_POST["iterations"];
+      $deno = -1;
+      $pi = 0;
+      for ($i = 0; $i <= $num; $i++) {
+          $deno = $deno + 2;
+          if ($i % 2 == 0) {
+              $pi = $pi + 4/$deno;
+          } else {
+              $pi = $pi - 4/$deno;
+          }
+      }
+      echo "$num iterations of the Gregory-Leibniz Series is:";
+      echo $pi;
 
-  ?>
-  <a href="index.php">Main Page</a>
+    ?>
+    <a href="index.php">Main Page</a>
+  </body>
 </html>
