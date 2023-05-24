@@ -24,6 +24,7 @@
         </header>
         
         <main class="mdl-layout__content" style="margin-left:75px;">
+        <br>
         <form  action="handler.php" method=post>
             <label for="iterations">Number of Iterations</label><br>
             <input type="text" id="iterations" name="iterations"><br>

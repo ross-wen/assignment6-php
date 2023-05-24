@@ -28,7 +28,7 @@
       $num = (int)$_POST["iterations"];
       $deno = -1;
       $pi = 0;
-      for ($i = 0; $i <= $num; $i++) {
+      for ($i = 1; $i <= $num; $i++) {
           $deno = $deno + 2;
           if ($i % 2 == 0) {
               $pi = $pi + 4/$deno;
@@ -40,6 +40,7 @@
       echo $pi;
 
       ?>
+        <br>
         <a href="index.php">Main Page</a>
       </main>
     </div>
