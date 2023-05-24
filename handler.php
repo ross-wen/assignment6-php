@@ -27,7 +27,7 @@
         $iteration = $_POST["iterations"];
         $valid = True;
 
-        if (is_numeric($iteration) && $iteration > 0 && $iteration == round($iteration)) {  
+        if (not(is_numeric($iteration) || $iteration > 0 || $iteration == round($iteration))) {  
           $valid = False;
           echo "Please Input Valid Number. Only positive integers are allowed.";  
         }
