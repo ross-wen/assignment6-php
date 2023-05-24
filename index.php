@@ -36,17 +36,3 @@
   <body>
 </html>
 
-<!--   <?php
-    $iteration = $_POST["iterations"];
-    if (!preg_match ("/^[0-9]*$/", $iteration) ){  
-        $Error = "Only numeric value is allowed.";  
-        echo $Error;  
-    } else {  
-        if ($iteration <= 0) {
-            echo "Only positives are allowed.";
-        }
-        if (is_int($iteration) == False) {
-            echo "Only whole numbers are allowed.";
-        }
-    }  
-  ?> -->

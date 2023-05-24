@@ -23,22 +23,43 @@
           </div>
       </header>
       <main class="mdl-layout__content" style="margin-left:75px;">
-      
+      <?php
+        $iteration = $_POST["iterations"];
+        $valid = True;
+        if (!preg_match ("/^[0-9]*$/", $iteration) ){  
+          $Error = "Only numeric value is allowed.";  
+          $valid = False;
+          echo $Error;  
+        }
+        if ($iteration <= 0) {
+          $valid = False;
+          echo "Only positives are allowed.";
+            
+        }
+        if (is_int($iteration) == False) {
+          $valid = False;
+          echo "Only whole numbers are allowed.";
+        }
+
+      ?> 
       <?php
       $num = (int)$_POST["iterations"];
       $deno = -1;
       $pi = 0;
-      for ($i = 0; $i < $num; $i++) {
+      if ($valid == True) {
+        for ($i = 0; $i < $num; $i++) {
           $deno = $deno + 2;
           if ($i % 2 == 0) {
               $pi = $pi + 4/$deno;
           } else {
               $pi = $pi - 4/$deno;
           }
+        }
+        echo "<br>";
+        echo "$num iterations of the Gregory-Leibniz Series is:";
+        echo $pi;
       }
-      echo "<br>";
-      echo "$num iterations of the Gregory-Leibniz Series is:";
-      echo $pi;
+        
 
       ?>
         <br>
