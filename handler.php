@@ -39,9 +39,9 @@
                 } else {
                     $pi = $pi - 4/$deno;
                 }
-                echo "<br>";
-                echo "$num iterations of the Gregory-Leibniz Series is:";
-                echo $pi;
+              echo "<br>";
+              echo "$num iterations of the Gregory-Leibniz Series is:";
+              echo $pi;
               }
             } else {
               echo $Error;
