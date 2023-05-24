@@ -26,20 +26,12 @@
       <?php
         $iteration = $_POST["iterations"];
         $valid = True;
-        if (!preg_match ("/^[0-9]*$/", $iteration) ){  
-          $Error = "Only numeric value is allowed. <br>";  
+
+        if (is_numeric($iteration) && $iteration > 0 && $iteration == round($iteration)) {  
           $valid = False;
-          echo $Error;  
+          echo "Please Input Valid Number. Only positive integers are allowed.";  
         }
-        if (int($iteration) <= 0) {
-          $valid = False;
-          echo "Only positives are allowed. <br>";
-            
-        }
-        if (is_int($iteration) == False) {
-          $valid = False;
-          echo "Only whole numbers are allowed. <br>";
-        }
+  
       ?> 
       <?php
       $num = (int)$_POST["iterations"];
