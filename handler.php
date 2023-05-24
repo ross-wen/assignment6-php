@@ -25,34 +25,35 @@
       <main class="mdl-layout__content" style="margin-left:75px;">
       <?php
         $iteration = $_POST["iterations"];
-        $valid = True;
-
-        if (not(is_numeric($iteration) || $iteration > 0 || $iteration == round($iteration))) {  
-          $valid = False;
-          echo "Please Input Valid Number. Only positive integers are allowed.";  
+        $Error = "Please Input Valid Number. Only positive integers are allowed.";  
+        if (is_numeric($iteration)) {
+          if ($iteration > 0) {
+            if ($iteration == round($iteration)) {
+              $num = (int)$_POST["iterations"];
+              $deno = -1;
+              $pi = 0;
+              for ($i = 0; $i < $num; $i++) {
+                $deno = $deno + 2;
+                if ($i % 2 == 0) {
+                    $pi = $pi + 4/$deno;
+                } else {
+                    $pi = $pi - 4/$deno;
+                }
+                echo "<br>";
+                echo "$num iterations of the Gregory-Leibniz Series is:";
+                echo $pi;
+              }
+            } else {
+              echo $Error;
+            }
+          } else {
+            echo $Error;
+          }
+        } else {
+          echo $Error;
         }
   
       ?> 
-      <?php
-      $num = (int)$_POST["iterations"];
-      $deno = -1;
-      $pi = 0;
-      if ($valid == True) {
-        for ($i = 0; $i < $num; $i++) {
-          $deno = $deno + 2;
-          if ($i % 2 == 0) {
-              $pi = $pi + 4/$deno;
-          } else {
-              $pi = $pi - 4/$deno;
-          }
-        }
-        echo "<br>";
-        echo "$num iterations of the Gregory-Leibniz Series is:";
-        echo $pi;
-      }
-        
-
-      ?>
         <br>
         <a href="index.php">Main Page</a>
       </main>
