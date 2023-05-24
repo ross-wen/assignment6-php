@@ -27,20 +27,19 @@
         $iteration = $_POST["iterations"];
         $valid = True;
         if (!preg_match ("/^[0-9]*$/", $iteration) ){  
-          $Error = "Only numeric value is allowed.";  
+          $Error = "Only numeric value is allowed. <br>";  
           $valid = False;
           echo $Error;  
         }
-        if ($iteration <= 0) {
+        if (int($iteration) <= 0) {
           $valid = False;
-          echo "Only positives are allowed.";
+          echo "Only positives are allowed. <br>";
             
         }
         if (is_int($iteration) == False) {
           $valid = False;
-          echo "Only whole numbers are allowed.";
+          echo "Only whole numbers are allowed. <br>";
         }
-
       ?> 
       <?php
       $num = (int)$_POST["iterations"];
